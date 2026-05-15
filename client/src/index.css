@@ -1,0 +1,105 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "Inter", "Outfit", "Roboto", system-ui, sans-serif;
+  --color-brand-50: #eff6ff;
+  --color-brand-100: #dbeafe;
+  --color-brand-500: #3b82f6;
+  --color-brand-600: #2563eb;
+  --color-brand-900: #1e3a8a;
+}
+
+@layer base {
+  :root {
+    --bg-main: #f8fafc;
+    --text-main: #0f172a;
+    --card-bg: #ffffff;
+    --border-color: #e2e8f0;
+  }
+  
+  .dark {
+    --bg-main: #0f172a;
+    --text-main: #f8fafc;
+    --card-bg: #1e293b;
+    --border-color: #334155;
+  }
+
+  body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    font-family: var(--font-sans);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+@layer components {
+  /* Layout Classes */
+  .layout-container {
+    @apply flex h-[100dvh] w-full overflow-hidden bg-[var(--bg-main)];
+  }
+
+  .onboarding-container {
+    @apply flex flex-col min-h-[100dvh] w-full max-w-4xl mx-auto bg-[var(--bg-main)];
+  }
+
+  .onboarding-wrapper {
+    @apply w-full max-w-2xl mx-auto;
+  }
+
+  .profile-content {
+    @apply w-full max-w-3xl;
+  }
+
+  .page-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full transition-all duration-500;
+  }
+
+  .dashboard-header {
+    @apply relative mb-8 rounded-3xl bg-gradient-to-br from-emerald-500 to-teal-700 p-8 text-white shadow-lg overflow-hidden;
+  }
+
+  .dashboard-grid {
+    @apply grid grid-cols-1 lg:grid-cols-3 gap-6;
+  }
+
+  .dashboard-card-grid {
+    @apply grid grid-cols-2 gap-4 lg:col-span-1;
+  }
+
+  .page-header {
+    @apply mb-8 pb-6 border-b border-[var(--border-color)] flex flex-col md:flex-row md:items-center justify-between gap-4;
+  }
+
+  .page-content-grid {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6;
+  }
+
+  /* Login Page Specifics */
+  .login-page-container {
+    @apply min-h-screen w-full flex items-center justify-center p-4 bg-gradient-to-br from-indigo-50 via-white to-emerald-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 relative overflow-hidden;
+  }
+
+  .login-page-container::before {
+    content: '';
+    @apply absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_top_right,rgba(16,185,129,0.1),transparent_40%),radial-gradient(circle_at_bottom_left,rgba(79,70,229,0.15),transparent_40%)] pointer-events-none;
+  }
+
+  .login-form {
+    @apply w-full max-w-md bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl border border-white/20 dark:border-slate-700 p-8 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.2)] transition-all duration-500 relative z-10;
+  }
+
+  .login-input {
+    @apply w-full pl-10 pr-4 py-3 bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-700 rounded-xl text-sm transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-emerald-500/50 focus:border-emerald-500 dark:focus:ring-emerald-400/50 dark:text-white placeholder:text-slate-400;
+  }
+
+  .login-button {
+    @apply mt-6 w-full py-3.5 px-4 bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white font-medium rounded-xl text-sm transition-all duration-300 shadow-lg shadow-emerald-500/25 hover:shadow-emerald-500/40 active:scale-[0.98] disabled:opacity-70 disabled:pointer-events-none;
+  }
+
+  /* List Items */
+  .food-entry-item, .activity-entry-item {
+    @apply flex items-center justify-between p-4 bg-slate-50 dark:bg-slate-800/50 rounded-2xl border border-slate-100 dark:border-slate-700/50 hover:border-emerald-200 dark:hover:border-emerald-500/30 transition-all duration-300 hover:shadow-md hover:-translate-y-0.5;
+  }
+}
