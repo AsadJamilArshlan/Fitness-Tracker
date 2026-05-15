@@ -20,6 +20,15 @@ const userSchema = new mongoose.Schema({
   weight: {
     type: Number,
   },
+  height: {
+    type: Number,
+  },
+  dailyCalorieIntake: {
+    type: Number,
+  },
+  dailyCalorieBurn: {
+    type: Number,
+  },
   goal: {
     type: String,
   }
