@@ -1,7 +1,6 @@
 import {
   ArrowLeft,
   ArrowRight,
-  PersonStanding,
   ScaleIcon,
   Target,
   User,
@@ -74,11 +73,9 @@ const Onboarding = () => {
         {/* Header */}
         <div className="p-6 pt-12 onboarding-wrapper">
           <div className="flex items-center gap-3 mb-2">
-            <div className="w-10 h-10 rounded-xl bg-emerald-500 flex items-center justify-center">
-              <PersonStanding className="w-6 h-6 text-white" />
-            </div>
+            <img src="/logo.png" alt="Smart Tracker Logo" className="w-10 h-10 rounded-xl object-cover shadow-sm" />
             <h1 className="text-2xl font-bold text-slate-800 dark:text-white">
-              FitTrack
+              Smart Tracker
             </h1>
           </div>
           <p className="text-slate-500 dark:text-slate-400 mt-4">

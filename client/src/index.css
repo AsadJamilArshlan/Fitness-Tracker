@@ -3,26 +3,57 @@
 
 @theme {
   --font-sans: "Inter", "Outfit", "Roboto", system-ui, sans-serif;
-  --color-brand-50: #eff6ff;
-  --color-brand-100: #dbeafe;
-  --color-brand-500: #3b82f6;
-  --color-brand-600: #2563eb;
-  --color-brand-900: #1e3a8a;
+  
+  /* Overriding Slate with a deep Midnight Navy palette */
+  --color-slate-50: #f8fafc;
+  --color-slate-100: #f1f5f9;
+  --color-slate-200: #e2e8f0;
+  --color-slate-300: #cbd5e1;
+  --color-slate-400: #94a3b8;
+  --color-slate-500: #64748b;
+  --color-slate-600: #475569;
+  --color-slate-700: #334155;
+  --color-slate-800: #1e293b;
+  --color-slate-900: #0a0f1d;
+
+  /* Overriding Emerald with a Cyan palette for primary accents */
+  --color-emerald-50: #ecfeff;
+  --color-emerald-100: #cffafe;
+  --color-emerald-200: #a5f3fc;
+  --color-emerald-300: #67e8f9;
+  --color-emerald-400: #22d3ee;
+  --color-emerald-500: #06b6d4;
+  --color-emerald-600: #0891b2;
+  --color-emerald-700: #0e7490;
+  --color-emerald-800: #155e75;
+  --color-emerald-900: #164e63;
+
+  /* Overriding Teal with a Blue palette for secondary accents */
+  --color-teal-50: #eff6ff;
+  --color-teal-100: #dbeafe;
+  --color-teal-200: #bfdbfe;
+  --color-teal-300: #93c5fd;
+  --color-teal-400: #60a5fa;
+  --color-teal-500: #3b82f6;
+  --color-teal-600: #2563eb;
+  --color-teal-700: #1d4ed8;
+  --color-teal-800: #1e40af;
+  --color-teal-900: #1e3a8a;
 }
 
 @layer base {
   :root {
     --bg-main: #f8fafc;
-    --text-main: #0f172a;
+    --text-main: #0a0f1d;
     --card-bg: #ffffff;
     --border-color: #e2e8f0;
   }
   
   .dark {
-    --bg-main: #0f172a;
+    --bg-main: #060a13;
     --text-main: #f8fafc;
-    --card-bg: #1e293b;
-    --border-color: #334155;
+    --card-bg: #0a0f1d;
+    --border-color: #1e293b;
   }
 
   body {
@@ -65,7 +96,7 @@
   }
 
   .dashboard-card-grid {
-    @apply grid grid-cols-2 gap-4 lg:col-span-1;
+    @apply grid grid-cols-1 sm:grid-cols-2 gap-4 lg:col-span-1;
   }
 
   .page-header {
@@ -101,5 +132,10 @@
   /* List Items */
   .food-entry-item, .activity-entry-item {
     @apply flex items-center justify-between p-4 bg-slate-50 dark:bg-slate-800/50 rounded-2xl border border-slate-100 dark:border-slate-700/50 hover:border-emerald-200 dark:hover:border-emerald-500/30 transition-all duration-300 hover:shadow-md hover:-translate-y-0.5;
+  }
+
+  /* Onboarding Specifics */
+  .onboarding-option-btn {
+    @apply w-full p-4 text-left rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800/50 hover:border-emerald-200 dark:hover:border-emerald-500/50 transition-all duration-300 shadow-sm hover:shadow-md hover:-translate-y-0.5 active:scale-[0.98];
   }
 }

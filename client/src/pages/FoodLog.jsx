@@ -149,23 +149,21 @@ const FoodLog = () => {
     <div className="page-container">
       {/* Header */}
       <div className="page-header">
-        <div className="flex items-center justify-between">
-          <div>
-            <h1 className="text-2xl font-bold text-slate-800 dark:text-white">
-              Food Log
-            </h1>
-            <p className="text-slate-500 dark:text-slate-400 text-sm mt-1">
-              Track your daily intake
-            </p>
-          </div>
-          <div className="text-right">
-            <p className="text-sm text-slate-500 dark:text-slate-400">
-              Today's Total
-            </p>
-            <p className="text-xl font-bold text-emerald-600 dark:text-emerald-400">
-              {totalCalories} kcal
-            </p>
-          </div>
+        <div>
+          <h1 className="text-2xl font-bold text-slate-800 dark:text-white">
+            Food Log
+          </h1>
+          <p className="text-slate-500 dark:text-slate-400 text-sm mt-1">
+            Track your daily intake
+          </p>
+        </div>
+        <div className="text-left md:text-right">
+          <p className="text-sm text-slate-500 dark:text-slate-400">
+            Today's Total
+          </p>
+          <p className="text-xl font-bold text-emerald-600 dark:text-emerald-400">
+            {totalCalories} kcal
+          </p>
         </div>
       </div>
 

@@ -97,7 +97,7 @@ const Profile = () => {
             </div>
             <div>
               <h2 className="text-lg font-semibold text-slate-800 dark:text-white">
-                Your Profile
+                {user?.username || "Your Profile"}
               </h2>
               <p className="text-slate-500 dark:text-slate-400 text-xs">
                 Member since{" "}

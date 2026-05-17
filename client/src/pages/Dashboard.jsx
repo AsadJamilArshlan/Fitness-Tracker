@@ -81,7 +81,7 @@ const Dashboard = () => {
       {/* Main Content */}
       <div className="dashboard-grid">
         {/* Calories Card */}
-        <Card className="shadow-lg col-span-2">
+        <Card className="shadow-lg lg:col-span-2">
           <div className="flex items-center justify-between mb-4">
             <div className="flex items-center gap-3">
               <div className="w-12 h-12 rounded-xl bg-orange-100 flex items-center justify-center">
@@ -185,7 +185,7 @@ const Dashboard = () => {
 
         {/* Goal Card */}
         {user && ( // This card will span both columns on large screens
-          <Card className="bg-linear-to-r from-slate-800 to-slate-700">
+          <Card className="bg-linear-to-r from-slate-800 to-slate-700 lg:col-span-2">
             <div className="flex items-center gap-4">
               <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center">
                 <TrendingUpIcon className="w-6 h-6 text-emerald-400" />
@@ -342,7 +342,7 @@ const Dashboard = () => {
         </Card>
 
         {/* Activity & Intake Graph */}
-        <Card className="col-span-2">
+        <Card className="lg:col-span-2">
           <h3 className="font-semibold text-slate-800 dark:text-white mb-2">
             This Week's Progress
           </h3>

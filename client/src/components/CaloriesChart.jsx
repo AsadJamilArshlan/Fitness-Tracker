@@ -86,14 +86,14 @@ const CaloriesChart = () => {
           <Legend iconType="circle" wrapperStyle={{ paddingTop: "10px" }} />
           <Bar
             dataKey="Intake"
-            fill="#10b981"
+            fill="#06b6d4"
             radius={[4, 4, 0, 0]}
             barSize={12}
             name="Intake"
           />
           <Bar
             dataKey="Burn"
-            fill="#f97316"
+            fill="#3b82f6"
             radius={[4, 4, 0, 0]}
             barSize={12}
             name="Burn"
